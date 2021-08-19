@@ -23,7 +23,6 @@ function pinGenerator() {
         pinDisplay.value = pinString;
     }
     else {
-        console.log('found less than 4 digit pin and it is: ', pinString);
         pinGenerator();
     }
 };
@@ -31,10 +30,31 @@ function pinGenerator() {
 document.getElementById('keypad').addEventListener('click', function () {
     const number = event.target.innerText;
     const inputDisplay = document.getElementById('input-display');
-    inputDisplay.value = inputDisplay.value + number;
+    if (isNaN(number)) {
+        if (number == 'C') {
+            inputDisplay.value = '';
+        }
+    }
+    else {
+        inputDisplay.value = inputDisplay.value + number;
+    }
 });
 
-document.getElementById('submit-button').addEventListener('click', function () {
+function verifyPin() {
+    const generatedPin = document.getElementById('display-output').value;
+    const typedPin = document.getElementById('input-display').value;
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    if (generatedPin == typedPin) {
+        successMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+    }
+    else {
+        errorMessage.style.display = 'block';
+        successMessage.style.display = 'none';
+    }
+};
 
-    console.log('clicked');
+document.getElementById('submit-button').addEventListener('click', function () {
+    verifyPin();
 });
