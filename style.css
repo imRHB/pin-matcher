@@ -79,13 +79,16 @@ cursor: pointer;
 .blink-me {
 color: #E0B612;
 }
-.submit-btn {
+.submit-btn, .clear-btn {
     border: none;
     margin-top: 20px;
     padding: 10px 120px;
     border-radius: 5px;
     background: #495BC3;
     color: #fff;
+}
+.clear-btn {
+    padding: 10px 60px;
 }
 .notify {
     color: #fff;
