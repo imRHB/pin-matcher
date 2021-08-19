@@ -17,12 +17,13 @@
                 <div class="pin-generator half-width">
                     <input id="display-output" class="form-control" type="text" style="background-color: #413d53;"
                         disabled>
-                    <button id="generate-button" onclick="pinGenerator()" class="generate-btn">Generate Pin</button>
+                    <button onclick="pinGenerator()" class="generate-btn">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input id="input-display" class="form-control" type="text">
+                    <input id="input-display" class="form-control" type="text" style="background-color: #413d53;"
+                        disabled>
                     <div class="numbers">
                         <div id="keypad" class="calc-body">
                             <div class="calc-button-row">
@@ -47,7 +48,7 @@
                             </div>
                             <div>
                                 <button id="submit-button" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <!-- <p class="action-left">3 try left</p> -->
                             </div>
                         </div>
                     </div>
