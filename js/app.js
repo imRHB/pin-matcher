@@ -32,15 +32,22 @@ function verifyPin() {
     const typedPin = inputPinField.value;
     const successMessage = document.getElementById('success-message');
     const errorMessage = document.getElementById('error-message');
-    if (generatedPin == typedPin) {
+    const emptyMessage = document.getElementById('empty-message');
+    if (inputPinField.value == '' && generatedPinField.value == '') {
+        emptyMessage.style.display = 'block';
+    }
+
+    else if (generatedPin == typedPin) {
         generatedPinField.value = '';
         inputPinField.value = '';
         successMessage.style.display = 'block';
         errorMessage.style.display = 'none';
+        emptyMessage.style.display = 'none';
     }
     else {
         errorMessage.style.display = 'block';
         successMessage.style.display = 'none';
+        emptyMessage.style.display = 'none';
     }
 };
 
