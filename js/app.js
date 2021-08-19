@@ -1,19 +1,3 @@
-/* document.getElementById('generate-button').addEventListener('click', function () {
-    const generateDisplay = document.getElementById('generate-display');
-    const pin = Math.round(Math.random() * 10000);
-    generateDisplay.value = pin;
-    const pinString = pin + '';
-    if (pinString.length == 4) {
-        return pinString;
-    }
-    else {
-        function ();
-    }
-
-
-    // console.log(pin);
-}) */
-
 function pinGenerator() {
     const pinDisplay = document.getElementById('display-output');
     const pin = Math.round(Math.random() * 10000);
@@ -41,11 +25,15 @@ document.getElementById('keypad').addEventListener('click', function () {
 });
 
 function verifyPin() {
-    const generatedPin = document.getElementById('display-output').value;
-    const typedPin = document.getElementById('input-display').value;
+    const generatedPinField = document.getElementById('display-output');
+    const generatedPin = generatedPinField.value;
+    const inputPinField = document.getElementById('input-display');
+    const typedPin = inputPinField.value;
     const successMessage = document.getElementById('success-message');
     const errorMessage = document.getElementById('error-message');
     if (generatedPin == typedPin) {
+        generatedPinField.value = '';
+        inputPinField.value = '';
         successMessage.style.display = 'block';
         errorMessage.style.display = 'none';
     }
